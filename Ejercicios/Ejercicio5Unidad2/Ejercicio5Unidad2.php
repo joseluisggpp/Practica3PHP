@@ -14,6 +14,10 @@
   <form action="Ejercicio5Unidad2Recepcion.php" method="post">
     <label for="numeros">Ingrese una serie de números separados por espacios:</label>
     <input type="text" name="numeros" id="numeros" required>
+
+    <label for="orden">Invertir orden:</label>
+    <input type="checkbox" name="orden" id="orden">
+
     <button type="submit">Enviar</button>
   </form>
 </body>

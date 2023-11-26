@@ -9,3 +9,22 @@ los campos tendrán unos valores predefinidos de 10x10 si no se meten valores.
 Las funciones deberán estar en un fichero denominado funciones-html.php y deberá incluirse en la pagina web que cree la página final.
 	
 No se podrá utilizar la etiqueta style ni css dentro del propio fichero. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <form action="Ejercicio6Unidad2Recepcion.php" method="post">
+        <label for="numeros">Ingrese una serie de números separados por espacios:</label>
+        <input type="text" name="numeros" id="numeros" required>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>

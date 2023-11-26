@@ -13,6 +13,7 @@
 
 function tablaNumeros($numeros, $orden = true)
 {
+
     $nprimos = calculoPrimos($numeros);
     $media = calculoMedia($numeros);
     $minimo = calculoMinimo($numeros);
@@ -69,8 +70,12 @@ if (isset($_POST["numeros"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     // Filtrar elementos vacíos del array
     $numerosArray = array_filter($numerosArray);
 
-    print_r($numerosArray);
-    $resultado = tablaNumeros($numerosArray);
+
+    //Devuelve false si está marcado, sino , true(el orden del array
+    //asociativo se invertirá dependiendo del valor de $orden).
+    $orden = isset($_POST["orden"]) ? false : true;
+
+    $resultado = tablaNumeros($numerosArray, $orden);
     // Mostrar los resultados en una tabla
     echo '<table border="1">';
     echo '<tr><th>Clave</th><th>Valor</th></tr>';
