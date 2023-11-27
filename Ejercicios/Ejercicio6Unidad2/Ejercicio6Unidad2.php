@@ -18,7 +18,6 @@ Las funciones deberán estar en un fichero denominado funciones-html.php y
 deberá incluirse en la pagina web que cree la página final.
 	
 No se podrá utilizar la etiqueta style ni css dentro del propio fichero. -->
-<!-- Ejercicio6Unidad2.php -->
 <!DOCTYPE html>
 <html lang="es">
 

@@ -2,7 +2,7 @@
 
 function crearTabla($color, $columnas, $filas)
 {
-    echo "<table style='background-color: $color;'>";
+    echo "<table bgcolor='$color'>";
     for ($i = 0; $i < $filas; $i++) {
         echo "<tr>";
         for ($j = 0; $j < $columnas; $j++) {
@@ -17,11 +17,11 @@ function crearSexo()
 {
     echo "<label>Sexo:</label>";
     echo "<input type='radio' name='sexo' value='masculino'>Masculino";
-    echo "<input type='radio' name='sexo' value='femenino'>Femenino";
+    echo "<input type='radio' name='sexo' value='femenino'>Femenino<br>";
 }
 
 function crearObservaciones($ancho = 10, $filas = 10)
 {
-    echo "<label>Observaciones:</label>";
+    echo "<label>Observaciones:</label><br>";
     echo "<textarea name='observaciones' rows='$filas' cols='$ancho'></textarea>";
 }
