@@ -25,14 +25,14 @@ counter_effect("0000") // [[0],[0],[0],[0]] -->
 
 <?php function counter_effect($hit_count)
 {
-    $resultado = [];
-    for ($i = 0; $i < strlen($hit_count); $i++) {
-        $digitoActual = (int)$hit_count[$i];
-        $resultado[$i] = range(0, $digitoActual);
-    }
-    return $resultado;
+  $resultado = [];
+  for ($i = 0; $i < strlen($hit_count); $i++) {
+    $digitoActual = (int)$hit_count[$i];
+    $resultado[$i] = range(0, $digitoActual);
+  }
+  return $resultado;
 }
-// print_r(counter_effect("1250"));
+print_r(counter_effect("1250"));
 /*function counter_effect($s) {
   return array_map(function ($d) {return range(0, $d);}, str_split($s));
 } */
