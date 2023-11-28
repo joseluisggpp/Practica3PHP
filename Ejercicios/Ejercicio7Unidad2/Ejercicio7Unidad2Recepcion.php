@@ -48,19 +48,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $timeStampFechaActual = time();
         $fechaActualFormateada = date("Y-m-d H:i:s");
 
-        // Convertimos a días y le hacemos la función floor para redondear hacia abajo.
+        // Obtenemos la diferencia de días entre la fecha de navidad más cercana y la fecha de hoy.
+        //Convertimos a días y le hacemos la función floor para redondear hacia abajo.
         $diasHastaNavidad = floor(($fechaNavidadActual - $timeStampFechaActual) / (60 * 60 * 24));
+
         // Creo el timestamp para la semana santa usando easter_date
         $timeStampSemanaSanta = easter_date(date("Y"));
         //Creo la fecha para la semana santa.
         $fechaSemanaSanta = date("Y-m-d H:i:s", $timeStampSemanaSanta);
+        // Usamos la clase DateTime para crear la fecha de Semana Santa y la actual.
+        $fechaSemanaSantaObj = new DateTime($fechaSemanaSanta);
+        $fechaActualObj = new DateTime();
+        $diferencia = date_diff($fechaSemanaSantaObj, $fechaActualObj);
+        $diasHastaSemanaSanta = $diferencia->format("%a");
+        $horasHastaSemanaSanta = $diferencia->format("%h");
 
-        $diferenciaEnSegundosSS = $timeStampFechaActual - $timeStampSemanaSanta;
-        $diasHastaSemanaSanta = floor(abs($diferenciaEnSegundosSS / (60 * 60 * 24)));
-        $horasHastaSemanaSanta = floor(($diferenciaEnSegundosSS % (60 * 60 * 24)) / 3600);
-        echo $fecha .  "<br>";
-        echo $fechaActualFormateada . "<br>";
-        echo $fechaSemanaSanta . "<br>";
+
         $estacion = obtenerEstacion($mesActual);
 
         // Si el día de la semana del cumpleaños es sábado o domingo, entonces no escribimos nada, sino, escribimos "no".
